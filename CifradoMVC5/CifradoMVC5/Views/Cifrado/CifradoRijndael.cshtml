@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "CifradoRijndael";
+}
+
+<h2>Cifrado Rijndael en MVC</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Clave: </label>
+        <input type="text" name="clave" class="form-control" placeholder="Escriba la clave para (des)cifrar el mensaje" />
+    </div>
+    <div>
+        <label>Mensaje: </label>
+        <textarea rows="5" name="texto" class="form-control"></textarea>
+    </div>
+    <div>
+        <button type="submit" name="accion" value="cifrar" class="btn btn-success">Cifrar mensaje</button>
+        <button type="submit" name="accion" value="descifrar" class="btn btn-success">Descifrar mensaje</button>
+    </div>
+    <div>
+        <label>Mensaje cifrado: </label>
+        <textarea rows="5" class="form-control">@ViewBag.Mensaje</textarea>
+        <input type="hidden" name="textocifrado" value="@ViewBag.Mensaje" />
+    </div>
+}
